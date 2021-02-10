@@ -1,2 +1,7 @@
 Name: <%= @intake.name%><br>
 Amount of calories: <%= @intake.amount%><br>
+
+<form method="post" action="/intakes/<%= @intake.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form> 
