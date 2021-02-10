@@ -1,0 +1,8 @@
+<h1>Here you can edit your intake form</h1><br>
+
+<form action="/intakes/<%= @intake.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    Name: <input type=text value="<%= @intake.name %>" name="name">
+    Amount: <input type=number value="<%= @intake.amount %>" name="amount">
+    <input type=submit>
+</form>
