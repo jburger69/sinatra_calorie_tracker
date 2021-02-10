@@ -22,5 +22,26 @@ class IntakeController < ApplicationController
         erb :'/intakes/index'
     end
 
-    
+    #update
+
+    get '/intakes/:id/edit' do
+        @intake = Intake.find(params[:id])
+        erb :'/intakes/edit'
+    end
+
+    post '/intakes/:id' do
+        @intake = Intake.find(params[:id])
+        @intake.update(name: params[:name], amount: params[:amount])
+        redirect "/intakes/#{@intake.id}"
+    end
+
+    #delete
+
+    delete '/intakes/:id' do
+        @intake = Intake.find(params[:id])
+        @intake.destroy
+        redirect '/intakes'
+    end
+
+
 end
