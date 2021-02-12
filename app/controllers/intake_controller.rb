@@ -43,5 +43,4 @@ class IntakeController < ApplicationController
         redirect '/intakes'
     end
 
-
 end
