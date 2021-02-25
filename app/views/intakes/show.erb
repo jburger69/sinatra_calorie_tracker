@@ -1,5 +1,13 @@
-Name: <%= @intake.name%><br>
-Amount of calories: <%= @intake.amount%><br>
+<h1>Welcome to Calorie Tracker Here is your details</h1>
+
+
+<h2>User Name: <%= @intake.user.name %></h2>
+
+
+<p>Date of intake: <strong><%= @intake.date%></strong><br></p>
+<p>Name: <%= @intake.name%><br></p>
+<p>Amount of calories: <%= @intake.amount%><br></p>
+<a href="/intakes/<% @intake.id %>/edit">Edit your Intake</a>
 
 <form method="post" action="/intakes/<%= @intake.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
