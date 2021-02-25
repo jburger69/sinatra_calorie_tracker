@@ -3,8 +3,8 @@ class CreateIntakes < ActiveRecord::Migration[5.2]
     create_table :intakes do |t|
       t.string :name
       t.integer :amount
+      t.date :date
       t.integer :user_id
-      t.integer :days_id
     end
   end
 end
