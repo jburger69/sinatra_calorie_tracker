@@ -6,6 +6,7 @@
 <% if current_user == @user %>
 <h3><p>Create a new calorie intake<a href='/intakes/new'> Create</a></p></h3>
 <% end %>
+<p><h2><strong><%= @user.intakes.count %> Intake Count</strong><br></h2></p>
 
 <% @user.intakes.each do |intake| %>
     <div>
