@@ -1,8 +1,0 @@
-<h1>Here you can edit your tracking day</h1><br>
-
-<form action="/days/<%= @day.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    Name: <input type=text value="<%= @day.name %>" name="name">
-    Date: <input type=date value="<%= @day.date %>" name="date">
-    <input type=submit>
-</form>
