@@ -1,4 +1,33 @@
-Welcome, <%= @user.email %><br>
+<h1>Welcome to Calorie Tracker,</h1> 
+<h2><%= @user.name %></h2><br>
 
 
-<a href="/logout">Log Out</a>
+<h2>Here are all of your days and intakes for the specific day</h2>
+<% if current_user == @user %>
+<h3><p>Create a new calorie intake<a href='/intakes/new'> Create</a></p></h3>
+<% end %>
+
+<% @user.intakes.each do |intake| %>
+    <div>
+    <p><strong>Date of intake: <%= intake.date %></strong><p>
+    <p>Name of food: <%= intake.name %></p>
+    <p>Amount of calories: <%= intake.amount %></p>
+    <p><a href="/intakes/<%= intake.id %>/edit"> Edit Intake</a></p>
+
+
+    <p><form method="post" action="/intakes/<%= intake.id %>">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete">
+    </form></p>
+    <br>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+
+
