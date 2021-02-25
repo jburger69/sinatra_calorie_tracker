@@ -12,16 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2021_02_09_020147) do
 
-  create_table "days", force: :cascade do |t|
-    t.string "name"
-    t.date "date"
-  end
-
   create_table "intakes", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
+    t.date "date"
     t.integer "user_id"
-    t.integer "days_id"
   end
 
   create_table "users", force: :cascade do |t|
