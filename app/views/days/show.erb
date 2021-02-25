@@ -1,8 +1,0 @@
-<h1>This is your new tracking day</h1><br>
-Name: <%= @day.name %><br>
-Date: <%= @day.date %><br>
-
-<form method="post" action="/days/<%= @day.id %>">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete">
-</form> 
