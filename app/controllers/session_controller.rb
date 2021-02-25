@@ -9,24 +9,18 @@ class SessionController < ApplicationController
           
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect "/users/#{user.id}"
+            redirect "/users/#{current_user.id}"
         else
             erb :'/users/failure'
         end
     end
 
     get '/logout' do
-        session.clear
-        erb :'/welcome'
-    end
-
-    helpers do
-        def logged_in?
-          !!session[:user_id]
-        end
-    
-        def current_user
-          User.find(session[:user_id])
+        if logged_in?
+            session.clear
+            erb :'/welcome'
+        else
+            erb :'/welcome'
         end
     end
 
