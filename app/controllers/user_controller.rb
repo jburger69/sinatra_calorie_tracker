@@ -10,6 +10,7 @@ class UserController < ApplicationController
     end
 
     get '/users/:id' do
+        current_user
         @user = User.find(params[:id])
         erb :'/users/show'
     end
