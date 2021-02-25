@@ -4,4 +4,5 @@
 .env
 Gemfile.lock
 spec.md
-/db/*.sqlite3
+.DS_Store
+db/development.sqlite
